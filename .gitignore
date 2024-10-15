@@ -1,7 +1,9 @@
 
 /runs/
 /test_files/
+/models/
+
 bus.jpg
 coco8.zip
-yolo11n.pt
+
 yolo11n.onnx
