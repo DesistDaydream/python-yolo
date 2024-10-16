@@ -12,25 +12,28 @@ ignore = ["F401", "F601"]
 respect-gitignore = true
 ignore-init-module-imports = true
 
+# 配置文件内容来源: https://github.com/ultralytics/ultralytics/blob/main/pyproject.toml
+
 [project]
 name = "python-yolo"
 dynamic = ["version"]
-
+requires-python = ">=3.8"
 dependencies = [
-    "numpy>=1.23.0",                                 # temporary patch for compat errors https://github.com/ultralytics/yolov5/actions/runs/9538130424/job/26286956354
+    "numpy>=1.23.0",        # temporary patch for compat errors https://github.com/ultralytics/yolov5/actions/runs/9538130424/job/26286956354
     "matplotlib>=3.3.0",
     "opencv-python>=4.6.0",
     "pillow>=7.1.2",
     "pyyaml>=5.3.1",
     "requests>=2.23.0",
     "scipy>=1.4.1",
-    "torch>=1.8.0",
-    "torch>=1.8.0,!=2.4.0; sys_platform == 'win32'", # Windows CPU errors w/ 2.4.0 https://github.com/ultralytics/ultralytics/issues/15049
-    "torchvision>=0.9.0",
-    "tqdm>=4.64.0",                                  # progress bars
-    "psutil",                                        # system utilization
-    "py-cpuinfo",                                    # display CPU info
+    # 手动安装 CUDA 版本的 PyTorch
+    # "torch>=1.8.0",
+    # "torch>=1.8.0,!=2.4.0; sys_platform == 'win32'", # Windows CPU errors w/ 2.4.0 https://github.com/ultralytics/ultralytics/issues/15049
+    # "torchvision>=0.9.0",
+    "tqdm>=4.64.0",            # progress bars
+    "psutil",                  # system utilization
+    "py-cpuinfo",              # display CPU info
     "pandas>=1.1.4",
-    "seaborn>=0.11.0",                               # plotting
-    "ultralytics-thop>=2.0.0",                       # FLOPs computation https://github.com/ultralytics/thop
+    "seaborn>=0.11.0",         # plotting
+    "ultralytics-thop>=2.0.0", # FLOPs computation https://github.com/ultralytics/thop
 ]

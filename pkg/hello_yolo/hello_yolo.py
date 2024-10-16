@@ -18,6 +18,7 @@ results = model.val()
 
 # 使用模型对图像执行对象检测
 # 这里的检测是识别图像中的物体，并给出物体的类别和位置。
+# model() 本身是 predict() 的别名。
 results = model("https://ultralytics.com/images/bus.jpg")
 # 若想要将识别结果的图片保存到本地，可以使用 results.show() 或 results.save()
 results[0].show()
