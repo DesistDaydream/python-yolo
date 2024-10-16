@@ -27,6 +27,7 @@ while cap.isOpened():
             break
     else:
         # 如果没有成功读取帧，退出循环
+        print("Error: can't open the webcam")
         break
 
 # 释放摄像头并关闭所有窗口

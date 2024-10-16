@@ -18,11 +18,11 @@ results = model.val()
 
 # 使用模型对图像执行对象检测
 # 这里的检测是识别图像中的物体，并给出物体的类别和位置。
+# model() 本身是 predict() 的别名。
 results = model("https://ultralytics.com/images/bus.jpg")
 # 若想要将识别结果的图片保存到本地，可以使用 results.show() 或 results.save()
 results[0].show()
 
-# 将模型导出为 ONNX 格式
+# 将模型导出为 ONNX 格式。
 success = model.export(format="onnx")
-
-
+# 也可以导出成用于 torch 的 torchscript 格式。除了 onnx 和 torchscript 还可以导出如下这些格式 openvino, engine, coreml, saved_model, pb, tflite, edgetpu, tfjs, paddle, ncnn
